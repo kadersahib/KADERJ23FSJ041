@@ -1,27 +1,30 @@
-package basiclabbook;
-
+package closelabbook;
+import java.util.Scanner;
 public class primenumbers {
 	public static void main(String[] args) {
-		int i =0;
-		int num =0;
+		int i;
+		int count;
 		
-		String primeNumbers = "";
-		for (i = 1; i <= 100; i++)
+		System.out.println("Enter the n values");
+		Scanner sc = new Scanner (System.in);
+		
+		int n = sc.nextInt();
+		
+		System.out.println("Prime numbers between to 1 to"+n+"are");
+		
+		for (int j=0;j<=n;j++)
 		{
-		int counter=0;
-		for(num =i; num>=1; num--)
+			count =0;
+		for (i=1;i<=j;i++)
 		{
-		if(i%num==0)
-		{
-		counter = counter + 1; 
+			if(j%i==0) 
+			{
+				count++;
 			}
 		}
-		if (counter ==2) {
+		if(count==2)
+			System.out.print(j+"");
 		
-		primeNumbers = primeNumbers + i + " "; 
-			}
 		}
-		System.out.println("Prime numbers from 1 to 100 are :"); 
-		System.out.println(primeNumbers);
 	}
 }
